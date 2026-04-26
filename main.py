@@ -25,6 +25,9 @@ def main():
     board = [list(row) for row in lines[2:8]]
 
     if algorithm == "UR":
+        if parameter != 0:
+            print("Error: Uniform Random only takes 0 for parameter")
+            sys.exit(1)
         move = uniform_random(board, player)
 
         if output_mode != "None":
