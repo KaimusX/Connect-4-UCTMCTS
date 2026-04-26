@@ -25,7 +25,6 @@ def main():
     board = [list(row) for row in lines[2:8]]
 
     if algorithm == "UR":
-    # TODO implement uniform_random alg. params may change
         move = uniform_random(board, player)
 
         if output_mode != "None":
