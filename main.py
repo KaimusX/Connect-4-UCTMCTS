@@ -1,4 +1,5 @@
-import sys    
+import sys
+from ur import uniform_random
         
 def main():
     # Argc
