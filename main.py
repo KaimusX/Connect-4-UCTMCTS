@@ -22,3 +22,15 @@ def main():
     algorithm = lines[0]
     player = lines[1]
     board = [list(row) for row in lines[2:8]]
+
+    if algorithm == "UR":
+    # TODO implement uniform_random alg. params may change
+        move = uniform_random(board, player)
+
+        if output_mode != "None":
+            print(f"FINAL Move selected: {move}")
+    
+    # TODO add elifs and call other algs
+
+if __name__ == "__main__":
+    main()
