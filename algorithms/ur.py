@@ -14,7 +14,7 @@ def get_legal_moves(board):
 
     for col in range(7):
         # There is space in top row.
-        if board[0][col] == "0":
+        if board[0][col] == "O":
             legal_moves.append(col + 1)
 
     return legal_moves
