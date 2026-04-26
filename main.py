@@ -1,5 +1,5 @@
 import sys
-from ur import uniform_random
+from algorithms.ur import uniform_random
         
 def main():
     # Argc
