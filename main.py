@@ -1,5 +1,7 @@
 import sys
 from algorithms.ur import uniform_random
+from algorithms.pmcgs import pmcgs
+from algorithm.uct import uct
         
 def main():
     # Argc
@@ -33,7 +35,15 @@ def main():
         if output_mode != "None":
             print(f"FINAL Move selected: {move}")
     
-    # TODO add elifs and call other algs
-
+    elif algorithm == "PMCGS":
+        move = pmcgs(board, player, parameter, output_mode)
+        print(f"FINAL Move selected: {move}")
+        
+    elif algorithm == "UCT":
+        move = uct(board, player, parameter, output_mode)
+        print(f"FINAL Move selected: {move}")
+    
+    else:
+        print(f"Error: Unknown algorithm '{algorithm}'")
 if __name__ == "__main__":
     main()
