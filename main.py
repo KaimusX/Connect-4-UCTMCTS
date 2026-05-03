@@ -1,7 +1,7 @@
 import sys
 from algorithms.ur import uniform_random
 from algorithms.pmcgs import pmcgs
-from algorithm.uct import uct
+from algorithms.uct import uct
         
 def main():
     # Argc
@@ -37,11 +37,13 @@ def main():
     
     elif algorithm == "PMCGS":
         move = pmcgs(board, player, parameter, output_mode)
-        print(f"FINAL Move selected: {move}")
-        
+        if output_mode != "None":
+            print(f"FINAL Move selected: {move}")
+
     elif algorithm == "UCT":
         move = uct(board, player, parameter, output_mode)
-        print(f"FINAL Move selected: {move}")
+        if output_mode != "None":
+            print(f"FINAL Move selected: {move}")
     
     else:
         print(f"Error: Unknown algorithm '{algorithm}'")
