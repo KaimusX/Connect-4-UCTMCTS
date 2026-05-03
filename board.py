@@ -16,3 +16,25 @@ def make_move(board, col, player):
 #sets cell back to '0'
 def undo_move(board, col, row):
     board[row][col - 1] = 'O'
+
+# col and row are 0-indexed. Returns 1 (Y wins), -1 (R wins), 0 (draw), None (ongoing).
+def is_terminal(board, col, row):
+    player = board[row][col]
+    for dr, dc in [(0, 1), (1, 0), (1, 1), (1, -1)]:
+        count = 1
+        r, c = row + dr, col + dc
+        while 0 <= r < 6 and 0 <= c < 7 and board[r][c] == player:
+            count += 1
+            r += dr
+            c += dc
+        r, c = row - dr, col - dc
+        while 0 <= r < 6 and 0 <= c < 7 and board[r][c] == player:
+            count += 1
+            r -= dr
+            c -= dc
+        if count >= 4:
+            return 1 if player == 'Y' else -1
+    for c in range(7):
+        if board[0][c] == 'O':
+            return None
+    return 0
