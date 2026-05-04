@@ -27,6 +27,9 @@ def play_game(agent_y, agent_r):
     board = empty_board()
     current = 'Y'
     while True:
+        legal = get_legal_moves(board)
+        if not legal:
+            return 'D'
         agent = agent_y if current == 'Y' else agent_r
         col = agent(board, current)
         row = make_move(board, col, current)
