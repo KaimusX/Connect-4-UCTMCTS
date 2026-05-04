@@ -38,3 +38,7 @@ def is_terminal(board, col, row):
         if board[0][c] == 'O':
             return None
     return 0
+
+#swap current player
+def other_player(player):
+    return 'Y' if player == 'R' else 'R'
