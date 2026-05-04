@@ -19,7 +19,7 @@ AGENTS = [
 
 #create empty board for the start of the game
 def empty_board():
-    return [['0'] * 7 for _ in range(6)]
+    return [['O'] * 7 for _ in range(6)]
 
 #plays full game between two agents, sequential moves
 #checks is_terminal after each move
